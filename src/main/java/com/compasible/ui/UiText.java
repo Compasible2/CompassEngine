@@ -29,7 +29,6 @@ public class UiText extends UiElement{
         }
     }
 
-    public void update() {}
 
     public void setValues(int x, int y, String string, Color color) {
         this.x = x;

@@ -99,17 +99,15 @@ public class MouseManager implements MouseListener, MouseMotionListener, MouseWh
     }
 
     public void update() {
-        clickAreas.forEach( (name, hashMap) -> {
-            hashMap.forEach( (rectangle, bool) -> {
-                HashMap<Rectangle, Boolean> loadRectangle = new HashMap<>();
+        clickAreas.forEach( (name, hashMap) -> hashMap.forEach( (rectangle, bool) -> {
+            HashMap<Rectangle, Boolean> loadRectangle = new HashMap<>();
 
-                if (bool) {
-                    loadRectangle.put(rectangle, false);
-                    clickAreas.put(name, loadRectangle);
-                }
+            if (bool) {
+                loadRectangle.put(rectangle, false);
+                clickAreas.put(name, loadRectangle);
+            }
 
-            });
-        });
+        }));
 
         if (leftClicked) {
             leftClicked = false;
@@ -143,27 +141,25 @@ public class MouseManager implements MouseListener, MouseMotionListener, MouseWh
         if (e.getButton() == MouseEvent.BUTTON1) {
             leftClicked = true;
 
-            clickAreas.forEach( (name, hashMap) -> {
-                hashMap.forEach( (rectangle, bool) -> {
-                    HashMap<Rectangle, Boolean> loadRectangle = new HashMap<>();
+            clickAreas.forEach( (name, hashMap) -> hashMap.forEach( (rectangle, bool) -> {
+                HashMap<Rectangle, Boolean> loadRectangle = new HashMap<>();
 
-                    if (e.getX() >= rectangle.x && e.getX() <= rectangle.x + rectangle.width) {
-                        if (e.getY() >= rectangle.y && e.getY() <= rectangle.y + rectangle.height) {
-                            loadRectangle.put(rectangle, true);
+                if (e.getX() >= rectangle.x && e.getX() <= rectangle.x + rectangle.width) {
+                    if (e.getY() >= rectangle.y && e.getY() <= rectangle.y + rectangle.height) {
+                        loadRectangle.put(rectangle, true);
 
-                            clickAreas.put(name, loadRectangle);
-                        }
-                        else {
-                            loadRectangle.put(rectangle, false);
-                            clickAreas.put(name, loadRectangle);
-                        }
+                        clickAreas.put(name, loadRectangle);
                     }
                     else {
                         loadRectangle.put(rectangle, false);
                         clickAreas.put(name, loadRectangle);
                     }
-                });
-            });
+                }
+                else {
+                    loadRectangle.put(rectangle, false);
+                    clickAreas.put(name, loadRectangle);
+                }
+            }));
         }
     }
 
@@ -207,27 +203,25 @@ public class MouseManager implements MouseListener, MouseMotionListener, MouseWh
     public void mouseDragged(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON1) {
 
-            hoverAreas.forEach( (name, hashMap) -> {
-                hashMap.forEach( (rectangle, bool) -> {
-                    HashMap<Rectangle, Boolean> loadRectangle = new HashMap<>();
+            hoverAreas.forEach( (name, hashMap) -> hashMap.forEach( (rectangle, bool) -> {
+                HashMap<Rectangle, Boolean> loadRectangle = new HashMap<>();
 
-                    if (e.getX() >= rectangle.x && e.getX() <= rectangle.x + rectangle.width) {
-                        if (e.getY() >= rectangle.y && e.getY() <= rectangle.y + rectangle.height) {
-                            loadRectangle.put(rectangle, true);
+                if (e.getX() >= rectangle.x && e.getX() <= rectangle.x + rectangle.width) {
+                    if (e.getY() >= rectangle.y && e.getY() <= rectangle.y + rectangle.height) {
+                        loadRectangle.put(rectangle, true);
 
-                            hoverAreas.put(name, loadRectangle);
-                        }
-                        else {
-                            loadRectangle.put(rectangle, false);
-                            hoverAreas.put(name, loadRectangle);
-                        }
+                        hoverAreas.put(name, loadRectangle);
                     }
                     else {
                         loadRectangle.put(rectangle, false);
                         hoverAreas.put(name, loadRectangle);
                     }
-                });
-            });
+                }
+                else {
+                    loadRectangle.put(rectangle, false);
+                    hoverAreas.put(name, loadRectangle);
+                }
+            }));
         }
 
         mouseX = e.getX();
@@ -239,27 +233,25 @@ public class MouseManager implements MouseListener, MouseMotionListener, MouseWh
     public void mouseMoved(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON1) {
 
-            hoverAreas.forEach( (name, hashMap) -> {
-                hashMap.forEach( (rectangle, bool) -> {
-                    HashMap<Rectangle, Boolean> loadRectangle = new HashMap<>();
+            hoverAreas.forEach( (name, hashMap) -> hashMap.forEach( (rectangle, bool) -> {
+                HashMap<Rectangle, Boolean> loadRectangle = new HashMap<>();
 
-                    if (e.getX() >= rectangle.x && e.getX() <= rectangle.x + rectangle.width) {
-                        if (e.getY() >= rectangle.y && e.getY() <= rectangle.y + rectangle.height) {
-                            loadRectangle.put(rectangle, true);
+                if (e.getX() >= rectangle.x && e.getX() <= rectangle.x + rectangle.width) {
+                    if (e.getY() >= rectangle.y && e.getY() <= rectangle.y + rectangle.height) {
+                        loadRectangle.put(rectangle, true);
 
-                            hoverAreas.put(name, loadRectangle);
-                        }
-                        else {
-                            loadRectangle.put(rectangle, false);
-                            hoverAreas.put(name, loadRectangle);
-                        }
+                        hoverAreas.put(name, loadRectangle);
                     }
                     else {
                         loadRectangle.put(rectangle, false);
                         hoverAreas.put(name, loadRectangle);
                     }
-                });
-            });
+                }
+                else {
+                    loadRectangle.put(rectangle, false);
+                    hoverAreas.put(name, loadRectangle);
+                }
+            }));
         }
 
 

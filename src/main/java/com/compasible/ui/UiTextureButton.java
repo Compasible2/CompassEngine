@@ -24,12 +24,12 @@ public class UiTextureButton extends UiElement{
     private HoldAction holdAction;
 
     @FunctionalInterface
-    public static interface ClickAction {
+    public interface ClickAction {
         void execute();
     }
 
     @FunctionalInterface
-    public static interface HoldAction {
+    public interface HoldAction {
         void execute();
     }
 

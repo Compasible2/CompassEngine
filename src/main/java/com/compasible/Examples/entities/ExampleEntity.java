@@ -15,7 +15,7 @@ public class ExampleEntity extends Entity {
     }
 
     public void  setDefaultValues() {
-        setX(11);
+        setX(10);
         setY(10);
 
         setWidth(20);

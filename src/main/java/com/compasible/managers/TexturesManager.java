@@ -1,8 +1,6 @@
 package com.compasible.managers;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.util.Objects;
 
 public class TexturesManager {
 

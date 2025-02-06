@@ -13,7 +13,7 @@ public class Ui {
     public boolean enabled;
 
     // Lists
-    private ArrayList<UiElement> uiElements = new ArrayList<>();
+    private final ArrayList<UiElement> uiElements = new ArrayList<>();
 
     public Ui(GamePanel gamePanel) {
         this.gamePanel = gamePanel;

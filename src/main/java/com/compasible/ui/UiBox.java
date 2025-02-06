@@ -20,7 +20,6 @@ public class UiBox extends UiElement{
         g2.fillRect(x + mainX, y + mainY, width, height);
     }
 
-    public void update() {}
 
     public void setValues(int x, int y, int width, int height, Color color) {
         this.x = x;
