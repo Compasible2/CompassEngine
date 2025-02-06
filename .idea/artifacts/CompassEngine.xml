@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CompassEngine">
+    <output-path>$PROJECT_DIR$/out/artifacts/CompassEngine</output-path>
+    <root id="archive" name="CompassEngine.jar" />
+  </artifact>
+</component>
